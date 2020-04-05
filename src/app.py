@@ -5,6 +5,8 @@ data = json.load(open('data.json'))
 
 # function to search for the word in the dictionnary
 def searching(word):
+    # putting the user input to the lower case
+    word = word.lower()
     # checking if the word exist
     if word in data: 
         return data[word]
