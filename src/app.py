@@ -12,7 +12,7 @@ def searching(word):
     # checking if the word exist
     if word in data: 
         return data[word]
-
+    # make sure the program return the definition of words that start with a capital letter
     elif word.title() in data:
         return data[word.title()]
     # checking for the word similarity and return a message
