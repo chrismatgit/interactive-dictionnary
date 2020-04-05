@@ -28,5 +28,13 @@ def searching(word):
 # user should put a word in the command line and save it the variable word
 word = input("Enter word: ")
 
-# finally printing the meaning if the word was found
-print(searching(word))
+# user should have an optimizing result
+result_output = searching(word)
+
+# Checking the result if it is a list to have an appropriate result
+if type(result_output) == list:
+    for result in result_output:
+        print(result)
+else:
+    # finally printing the meaning if the word was found
+    print(result_output)
