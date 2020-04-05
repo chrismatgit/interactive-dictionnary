@@ -1,4 +1,6 @@
 import json
+# import the difflib for checking word similarity
+from difflib import get_close_matches
 
 # load the json data
 data = json.load(open('data.json'))
@@ -10,6 +12,9 @@ def searching(word):
     # checking if the word exist
     if word in data: 
         return data[word]
+    # checking for the word similarity and return a message
+    elif len(get_close_matches(word, data.keys())) > 0 :
+        return 'Did you mean %s instead please?' % get_close_matches(word, data.keys())[0]
     else:
         return 'The world entered does not exist. Please double check it'
 
